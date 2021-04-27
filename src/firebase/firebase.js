@@ -3,12 +3,12 @@ import "firebase/firestore";
 import "firebase/auth";
 
 var firebaseConfig = {
-  apiKey: "AIzaSyBlOP0hTw33HhWYRWPrrsGgE4b5OgmLQsA",
-  authDomain: "todoapp-3d854.firebaseapp.com",
-  projectId: "todoapp-3d854",
-  storageBucket: "todoapp-3d854.appspot.com",
-  messagingSenderId: "68390300234",
-  appId: "1:68390300234:web:50fed38ececd498a1114b3",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
 };
 
 if (!firebase.apps.length) {
