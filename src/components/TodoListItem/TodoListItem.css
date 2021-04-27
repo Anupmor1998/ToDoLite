@@ -1,0 +1,12 @@
+.todo {
+  font-size: 25px;
+}
+.inprogress {
+  font-size: 15px;
+  color: #6c757d;
+}
+.todo-item {
+  margin-top: 1rem;
+  display: flex;
+  padding: 1rem;
+}

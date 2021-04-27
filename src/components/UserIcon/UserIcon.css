@@ -1,0 +1,11 @@
+.usericon {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 30px;
+  border: solid 1px #000;
+  background-color: #e76f51;
+  text-align: center;
+  line-height: 60px;
+  margin: 1.5rem;
+}

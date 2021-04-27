@@ -1,24 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import { Box, ChakraProvider, Img } from "@chakra-ui/react";
+import "./App.css";
+import LogIn from "./components/LogIn/Login";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../src/firebase/firebase";
+import loader from "./images/loader.svg";
+import MainLayout from "./components/Layout/MainLayout";
 
 function App() {
+  const [user, loading] = useAuthState(auth);
+
+  if (loading) {
+    return <Img className="loader" src={loader} />;
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ChakraProvider>
+      <Box height="100vh" className="App">
+        {user ? <MainLayout user={user} /> : <LogIn />}
+      </Box>
+    </ChakraProvider>
   );
 }
 
