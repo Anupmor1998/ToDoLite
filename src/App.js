@@ -5,6 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "../src/firebase/firebase";
 import loader from "./images/loader.svg";
 import MainLayout from "./components/Layout/MainLayout";
+import GithubRibbon from "./components/GitHubRibbon/GitHubRibbon";
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -14,6 +15,7 @@ function App() {
   }
   return (
     <ChakraProvider>
+      <GithubRibbon />
       <Box height="100vh" className="App">
         {user ? <MainLayout user={user} /> : <LogIn />}
       </Box>
