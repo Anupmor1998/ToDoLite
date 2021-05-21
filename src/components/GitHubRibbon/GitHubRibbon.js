@@ -2,7 +2,7 @@ import React from "react";
 
 function GithubRibbon() {
   return (
-    <a href="https://github.com/Anupmor1998/Qr-Generator">
+    <a href="https://github.com/Anupmor1998/ToDoLite">
       <img
         style={{ position: "absolute", right: "0" }}
         loading="lazy"
