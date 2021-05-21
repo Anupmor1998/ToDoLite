@@ -1,3 +1,11 @@
 .login-card {
   box-shadow: 5px 6px 7px #6c757d;
 }
+.btn-section {
+  display: flex;
+  justify-content: space-between;
+}
+.guest {
+  height: 50px;
+  margin-top: 1rem;
+}

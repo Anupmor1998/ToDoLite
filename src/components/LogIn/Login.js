@@ -79,6 +79,31 @@ function LogIn() {
         })
       );
   };
+
+  const handleGuest = async (e) => {
+    e.preventDefault();
+
+    await auth
+      .signInWithEmailAndPassword("abc@gmail.com", "123456")
+      .then((res) =>
+        toast({
+          title: `Hi ${res.user.email}`,
+          description: res.message,
+          status: "success",
+          duration: 2000,
+          isClosable: true,
+          position: "top-right",
+        })
+      )
+      .catch((error) =>
+        toast({
+          title: error.message,
+          status: "error",
+          duration: 2000,
+          isClosable: true,
+        })
+      );
+  };
   return (
     <>
       <Heading padding="1rem 0 0 1rem" size="2xl" color="#e76f51">
@@ -117,13 +142,28 @@ function LogIn() {
                 </Button>
               </Box>
 
-              <Divider
-                marginTop="1rem"
-                orientation="horizontal"
-                borderColor="#495057"
-              />
-              <Text textAlign="center">Or</Text>
-              <GoogleLogin />
+              <Box d="flex">
+                <Divider
+                  marginTop="1rem"
+                  orientation="horizontal"
+                  borderColor="#495057"
+                />
+
+                <Text textAlign="center" padding="0 1rem">
+                  Or
+                </Text>
+                <Divider
+                  marginTop="1rem"
+                  orientation="horizontal"
+                  borderColor="#495057"
+                />
+              </Box>
+              <Box className="btn-section">
+                <GoogleLogin />
+                <Button className="guest" onClick={handleGuest}>
+                  Guest Login
+                </Button>
+              </Box>
             </Form>
           </CardBody>
         </Card>
