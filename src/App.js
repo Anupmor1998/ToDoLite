@@ -16,9 +16,7 @@ function App() {
   return (
     <ChakraProvider>
       <GithubRibbon />
-      <Box height="100vh" className="App">
-        {user ? <MainLayout user={user} /> : <LogIn />}
-      </Box>
+      <Box className="App">{user ? <MainLayout user={user} /> : <LogIn />}</Box>
     </ChakraProvider>
   );
 }

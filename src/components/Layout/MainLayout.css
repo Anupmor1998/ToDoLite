@@ -11,3 +11,8 @@
 .header {
   display: flex;
 }
+.layout {
+  width: 100%;
+  min-height: 100vh;
+  height: auto;
+}

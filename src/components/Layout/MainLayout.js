@@ -37,7 +37,7 @@ function MainLayout({ user }) {
   };
 
   return (
-    <>
+    <Box className="layout">
       <Box className="header">
         <UserIcon currentUser={user} />
         <Spacer />
@@ -73,7 +73,7 @@ function MainLayout({ user }) {
             : null}
         </Box>
       </Box>
-    </>
+    </Box>
   );
 }
 
